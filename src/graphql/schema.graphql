@@ -1,13 +1,18 @@
-type Movie {
+type Image {
   id: Int!
   title: String!
-  rating: Float
+  location: String!
+  tags: [String!]
+  round: Int!
+  round_win: Int!
+  game: Int!
+  game_win: Int!
 }
 
 type Query {
-  movie(title: String!): Movie
+  image(title: String!): Image
 }
 
 type Mutation {
-  addMovie(title:String!, rating: Float): Boolean!
+  addImage(title:String!): Boolean!
 }
