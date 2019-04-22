@@ -1,21 +1,23 @@
+# graphql 스키마 생성
+
 type Image {
-  id: Int!
-  title: String!
-  location: String!
-  tags: [String!]
-  round: Int!
-  round_win: Int!
-  game: Int!
-  game_win: Int!
+  id: Int
+  title: String
+  location: String
+  tags: String
+  round: Int
+  round_win: Int
+  game: Int
+  game_win: Int
 }
 
 type Query {
-  images(tags: String!): [Image]
-  image(title: String!): Image
+  images: [Image]
+  image(title: String): Image
   test: String
 }
 
 type Mutation {
-  addImages(tags: String!): [Image]
-  addImage(title: String!): Image!
+  addImages(tags: String): [Image]
+  addImage(title: String): Image
 }

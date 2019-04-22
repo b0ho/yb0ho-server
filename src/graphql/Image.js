@@ -1,32 +1,22 @@
 import mongoose from "mongoose";
 
+// mongoose 스키마 모듈 생성
+
+const Schema = mongoose.Schema;
+
 export const getTest = _ => {
   return "sstt";
 };
 
-export const getImages = async tags => {
-  const {
-    data: {
-      data: { images }
-    }
-  } = await axios(LIST_MOVIES_URL, {
-    params: {
-      limit,
-      minimum_rating: rating
-    }
-  });
-  return movies;
-};
+const imageSchema = new Schema({
+  id: Number,
+  title: String,
+  location: String,
+  tags: String,
+  round: Number,
+  round_win: Number,
+  game: Number,
+  game_win: Number
+});
 
-export const getImage = async title => {
-  const {
-    data: {
-      data: { movie }
-    }
-  } = await axios(MOVIE_DETAILS_URL, {
-    params: {
-      movie_id: id
-    }
-  });
-  return movie;
-};
+export default mongoose.model("Image", imageSchema);
