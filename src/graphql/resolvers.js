@@ -1,10 +1,10 @@
-import Image from "./Image";
+import { getImages, getImage, getTest } from "./Image";
 
 const resolvers = {
   Query: {
-    image: (_, { title }) => {
-      return Image.findOne({ title }); // 데이터베이스에서 특정 하나의 데이터 조회
-    }
+    images: (_, { tags }) => getImages(tags),
+    image: (_, { title }) => getImage(title),
+    test: _ => getTest()
   },
 
   Mutation: {

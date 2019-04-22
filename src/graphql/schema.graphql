@@ -10,9 +10,12 @@ type Image {
 }
 
 type Query {
+  images(tags: String!): [Image]
   image(title: String!): Image
+  test: String
 }
 
 type Mutation {
-  addImage(title:String!): Boolean!
+  addImages(tags: String!): [Image]
+  addImage(title: String!): Image!
 }
